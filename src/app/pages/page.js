@@ -25,7 +25,7 @@ export default function Home() {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/products/${productCode}`);
+      const response = await axios.get(`https://tech0-gen-7-step4-studentwebapp-pos-24-b2gng6bvegafh3es.eastus-01.azurewebsites.net/products/${productCode}`);
       setProduct(response.data);
       setError('');
     } catch (error) {
@@ -55,7 +55,7 @@ export default function Home() {
   // 購入を確定してサーバーにデータを送信
   const finalizePurchase = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/purchases', {
+      const response = await axios.post('https://tech0-gen-7-step4-studentwebapp-pos-24-b2gng6bvegafh3es.eastus-01.azurewebsites.net/purchases', {
         emp_cd: '999',
         store_cd: '30',
         pos_no: '90',
