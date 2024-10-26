@@ -34,6 +34,11 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
+    - name: Prepare deploy directory
+      run: |
+        mkdir -p ./deploy/.next/static
+        cp -r .next/static/* ./deploy/.next/static
+
       - name: Copy artifact for deployment job
         run: |
           mkdir deploy
